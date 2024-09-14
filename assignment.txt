@@ -5,7 +5,7 @@ Soru 1: Kullanıcıdan iki sayı alarak bu sayıları toplayan bir programın ps
 
 Başla
   Dene (try):
-    Kullanıcıdan float sayı al ve {Sayı1} değişkeni karşılığı olarak tanımla
+    Kullanıcıdan float sayı al: {Sayı1} değişkeni karşılığı olarak tanımla
     Kullanıcıdan float sayı al: {Sayı2} değişkeni karşılığı olarak tanımla
     Yazdır: {Sayı1} + {Sayı2} 
   Hatalı ise (except):

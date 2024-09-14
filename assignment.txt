@@ -1,0 +1,129 @@
+Tusco Data Science Bootcamp'i için ilk ödevin cevapları. 
+Tüm Pseudo kodların Python karşılıkları belgenin en altında bulunabilir. 
+----
+Soru 1: Kullanıcıdan iki sayı alarak bu sayıları toplayan bir programın pseudo kodunu yazın.
+
+Başla
+  Dene (try):
+    Kullanıcıdan float sayı al ve {Sayı1} değişkeni karşılığı olarak tanımla
+    Kullanıcıdan float sayı al: {Sayı2} değişkeni karşılığı olarak tanımla
+    Yazdır: {Sayı1} + {Sayı2} 
+  Hatalı ise (except):
+    Yaz: Hatalı veri girişi. Yalnızca sayı girilebilir.
+Bitir
+---
+Soru 2: 1'den 100'e kadar olan sayıları toplayan bir programın pseudo kodunu yazın.
+
+Başla
+    Değişken tanımla: {toplam} = 0 
+    For döngüsü:   
+        0-100 Aralığındaki her Sayi (i) için:
+          {toplam} += Sayi
+    Yazdır: {toplam}
+Bitir
+---
+Soru 3:  Kullanıcıdan alınan bir sayının asal olup olmadığını bulan bir programın pseudo kodunu yazın.
+
+Başlat:
+  While döngüsü:
+    Kullanıcıdan sayı al ve {Sayı} değişkenine karşılık olarak tanımla.
+    Eğer Sayı <= 0 ise: 
+      Yazdır: “Hatalı veri girişi. Sayı negatif yada sıfır olamaz”
+      Döngüyü başa al
+    Aksi takdirde:
+      Döngüden çık.
+  
+  Yeni Liste oluştur: {bölenler}
+  
+  For döngüsü:
+    0 ile ({Sayı} + 1) aralığındaki her i için: 
+      i += 1
+      Eğer {Sayı} % i == 0 ise:
+        i’yi {bölenler} listesine ekle
+  
+  Eğer {bölenler} listesinin öğe sayısı 2 ise: (Len)
+      Yaz: {Sayı} sayısı bir asal sayıdır.
+  Aksi takdirde:
+    Yaz: {Sayı} sayısı asal bir sayı değildir. {Sayı}’nın tam bölenleri şunlardır: {bölenler listesi}
+Bitir
+---
+Soru 4: 
+
+Başlat   
+  Dizi al ve {liste} olarak tanımla
+  
+  İki adet boş dizi tanımla
+  {kontrol_listesi}
+  {tekrar_listesi}
+  
+  For döngüsü:
+    {liste} içerisinde bulunan her eleman (i) için:
+      Eğer eleman {kontrol_listesi} içerisinde bulunmuyorsa:
+        eleman’ı {kontrol_listesi} içerisine ekle
+      Aksi takdirde:
+        eleman’ı {tekrar_listesi} içerisine ekle
+  
+  Eğer {tekrar_listesi} eleman sayısı == 0 ise:
+    Yaz: “Tekrar eden eleman yoktur.”
+  Aksi takdirde:
+    Yaz: Listede tekrar eden elemanlar şunlardır: {tekrar_listesi}
+Bitir
+************
+Python: 
+
+*1*****
+
+try:
+	Sayı1 = float(input("Sayı1: "))
+	Sayı2 = float(input("Sayı2: "))
+	print(Sayı1+Sayı2)
+except: 
+	print("Hatalı veri girişi. Yalnızca sayı girilebilir")
+
+*2*****
+
+toplam = 0
+for sayi in range(100)
+	toplam += sayi
+print(toplam)
+
+*3*****
+
+while True:
+        sayı = int(input("Sayı giriniz: "))
+        if sayı <= 0:
+            print("Hatalı veri girişi. Sayı sıfır yada negatif olamaz.")
+            continue
+        else:
+            break
+
+bolenler = []
+
+for i in range(0, sayı + 1):
+    i += 1
+    if sayı % i == 0:
+        bolenler.append(i)
+
+if len(bolenler) == 2:
+    print(f"{sayı} sayısı bir asal sayıdır")
+else: 
+    print(f"{sayı} sayısı asal değildir.")
+    print(f"{sayı}'in tam bölenleri: {bolenler}")
+
+*4*****
+
+liste = ["Mercedes","Mercedes","Toyota","Mazda","Honda","Mazda","Nissan","Hyundai"]
+
+kontrol_listesi = []
+tekrar_listesi = []
+
+for eleman in liste:
+		if eleman not in kontrol_listesi:
+			kontrol_listesi.append(eleman)
+		else:
+			tekrar_listesi.append(eleman)
+
+if len(tekrar_listesi) == 0:
+	print("Tekrar eden eleman yoktur")
+else:
+	print(f"Listede tekrar eden elemanlar şunlardır: {tekrar_listesi}")

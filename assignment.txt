@@ -60,7 +60,7 @@ Başlat
     {liste} içerisinde bulunan her eleman (i) için:
       Eğer eleman {kontrol_listesi} içerisinde bulunmuyorsa:
         eleman’ı {kontrol_listesi} içerisine ekle
-      Aksi takdirde:
+      Yada eğer eleman {kontrol_listesi} içerisinde bulunuyorsa VE eleman {tekrar_listesi} içerisinde bulunmuyorsa:
         eleman’ı {tekrar_listesi} içerisine ekle
   
   Eğer {tekrar_listesi} eleman sayısı == 0 ise:
@@ -90,12 +90,12 @@ print(toplam)
 *3*****
 
 while True:
-        sayı = int(input("Sayı giriniz: "))
-        if sayı <= 0:
-            print("Hatalı veri girişi. Sayı sıfır yada negatif olamaz.")
-            continue
-        else:
-            break
+	sayı = int(input("Sayı giriniz: "))
+		if sayı <= 0:
+    	print("Hatalı veri girişi. Sayı sıfır yada negatif olamaz.")
+      continue
+    else:
+    	break
 
 bolenler = []
 
@@ -112,18 +112,19 @@ else:
 
 *4*****
 
-liste = ["Mercedes","Mercedes","Toyota","Mazda","Honda","Mazda","Nissan","Hyundai"]
+liste = [1,1,3,5,7,4,3,2,2,3,3,5,9,9,9]
 
 kontrol_listesi = []
 tekrar_listesi = []
 
 for eleman in liste:
-		if eleman not in kontrol_listesi:
-			kontrol_listesi.append(eleman)
-		else:
-			tekrar_listesi.append(eleman)
+	if eleman not in kontrol_listesi:
+		kontrol_listesi.append(eleman)
+	elif eleman in kontrol_listesi and eleman not in tekrar_listesi:
+		tekrar_listesi.append(eleman)
 
 if len(tekrar_listesi) == 0:
 	print("Tekrar eden eleman yoktur")
 else:
 	print(f"Listede tekrar eden elemanlar şunlardır: {tekrar_listesi}")
+
